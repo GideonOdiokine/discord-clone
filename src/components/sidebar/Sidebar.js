@@ -2,6 +2,7 @@ import React from "react";
 import "./sidebar.css";
 import ExpandMoreIcon from "@material-ui/icons/ExpandMore";
 import AddIcon from "@material-ui/icons/Add";
+import SidebarChannel from "../sidebarChannel/SidebarChannel";
 
 function Sidebar() {
   return (
@@ -20,7 +21,7 @@ function Sidebar() {
         </div>
       </div>
       <div className="sidebar__channelslist">
-          <SidebarChannel />
+        <SidebarChannel />
       </div>
     </div>
   );
