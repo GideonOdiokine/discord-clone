@@ -5,7 +5,6 @@
   font-family: sans-serif;
 }
 
-.flex {
+.app {
   display: flex;
-  width: 100%;
 }

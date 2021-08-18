@@ -3,6 +3,11 @@ import "./sidebar.css";
 import ExpandMoreIcon from "@material-ui/icons/ExpandMore";
 import AddIcon from "@material-ui/icons/Add";
 import SidebarChannel from "../sidebarChannel/SidebarChannel";
+import SignalCellularAltIcon from "@material-ui/icons/SignalCellularAlt";
+import CallIcon from "@material-ui/icons/Call";
+import InfoOutlinedIcon from "@material-ui/icons/InfoOutlined";
+import { Avatar } from "@material-ui/core";
+import { Headset, Settings, Mic } from "@material-ui/icons";
 
 function Sidebar() {
   return (
@@ -19,9 +24,35 @@ function Sidebar() {
           </div>
           <AddIcon className="sidebar__addChannel" />
         </div>
+        <div className="sidebar__channelslist">
+          <SidebarChannel />
+        </div>
       </div>
-      <div className="sidebar__channelslist">
-        <SidebarChannel />
+      <div className="sidebar__voice">
+        <SignalCellularAltIcon
+          className="Sidebar__voiceIcon"
+          fontSize="large"
+        />
+        <div className="sidebar__voiceInfo">
+          <h3>Voice Connected</h3>
+          <p>Stream</p>
+        </div>
+        <div className="sidebar__voiceIcons">
+          <InfoOutlinedIcon />
+          <CallIcon />
+        </div>
+      </div>
+      <div className="sidebar__profile">
+        <Avatar src="" />
+        <div className="sidebar__profileInfo">
+          <h3>Gideon Odiokine</h3>
+          <p>ThisIsMyId</p>
+        </div>
+        <div className="sidebar__profileIcons">
+          <Mic />
+          <Headset />
+          <Settings />
+        </div>
       </div>
     </div>
   );
