@@ -4,6 +4,7 @@ import Chat from "./components/Chat/Chat";
 import Sidebar from "./components/sidebar/Sidebar";
 import { useSelector } from "react-redux";
 import { selectUser } from "../src/features/user/userSlice";
+import Login from "./pages/Login";
 function App() {
   const user = useSelector(selectUser);
   return (
@@ -14,7 +15,7 @@ function App() {
           <Chat />
         </>
       ) : (
-        <h2>Login Abg(Mbok)</h2>
+        <Login />
       )}
     </div>
   );
