@@ -14,7 +14,7 @@ function App() {
           <Chat />
         </>
       ) : (
-        <h2>Login Abeg(Mbok)</h2>
+        <h2>Login Abg(Mbok)</h2>
       )}
     </div>
   );
