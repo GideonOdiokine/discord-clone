@@ -43,7 +43,9 @@ function Sidebar() {
           <AddIcon className="sidebar__addChannel" />
         </div>
         <div className="sidebar__channelslist">
-          <SidebarChannel />
+          {channels.map((channel) => (
+            <SidebarChannel />
+          ))}
         </div>
       </div>
       <div className="sidebar__voice">
