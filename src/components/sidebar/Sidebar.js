@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import "./sidebar.css";
 import ExpandMoreIcon from "@material-ui/icons/ExpandMore";
 import AddIcon from "@material-ui/icons/Add";
@@ -10,10 +10,24 @@ import { Avatar } from "@material-ui/core";
 import { Headset, Settings, Mic } from "@material-ui/icons";
 import { useSelector } from "react-redux";
 import { selectUser } from "../../features/user/userSlice";
-import { auth } from "../firebase";
+import db, { auth } from "../firebase";
+import { useState } from "react";
 
 function Sidebar() {
   const user = useSelector(selectUser);
+  const [channels, setChannels] = useState([]);
+
+  useEffect(() => {
+    db.collection("channels").onSnapshot((snapshot) =>
+      setChannels(
+        snapshot.docs.map((doc) => ({
+          id: doc.id,
+          channel: doc.data(),
+        }))
+      )
+    );
+  }, []);
+
   return (
     <div className="sidebar">
       <div className="sidebar__top">
