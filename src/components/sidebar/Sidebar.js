@@ -8,8 +8,12 @@ import CallIcon from "@material-ui/icons/Call";
 import InfoOutlinedIcon from "@material-ui/icons/InfoOutlined";
 import { Avatar } from "@material-ui/core";
 import { Headset, Settings, Mic } from "@material-ui/icons";
+import { useSelector } from "react-redux";
+import { selectUser } from "../../features/user/userSlice";
+import { auth } from "../firebase";
 
 function Sidebar() {
+  const user = useSelector(selectUser);
   return (
     <div className="sidebar">
       <div className="sidebar__top">
@@ -43,10 +47,10 @@ function Sidebar() {
         </div>
       </div>
       <div className="sidebar__profile">
-        <Avatar src="" />
+        <Avatar onClick={() => auth.signOut()} src={user.photo} />
         <div className="sidebar__profileInfo">
-          <h3>Gideon Odiokine</h3>
-          <p>ThisIsMyId</p>
+          <h3>{user.displayName}</h3>
+          <p>#{user.uid.substring(0, 5)}</p>
         </div>
         <div className="sidebar__profileIcons">
           <Mic />

@@ -16,3 +16,7 @@
   background-color: black;
   color: #738adb;
 }
+.login > div > img {
+  object-fit: contain;
+  height: 150px;
+}
